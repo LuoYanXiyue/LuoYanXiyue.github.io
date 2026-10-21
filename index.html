@@ -1,19 +1,57 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>落妍汐悦</title>
 <style>
-body{margin:0;min-height:100vh;display:flex;flex-direction:column;
-justify-content:center;align-items:center;background:#f6f5f2;color:#333;
-font-family:-apple-system,"PingFang SC",sans-serif}
-h1{font-size:28px;margin:0 0 10px}
-p{color:#8a8a8a;font-size:14px;margin:0}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#0f1115;color:#e8e8ea;
+font-family:-apple-system,"PingFang SC",sans-serif;display:flex;
+justify-content:center;padding:56px 20px;overflow-x:hidden}
+.blob{position:fixed;border-radius:50%;filter:blur(80px);opacity:.45;z-index:0}
+.b1{width:320px;height:320px;background:#4a6cff;top:-90px;left:-80px;
+animation:f1 14s ease-in-out infinite}
+.b2{width:280px;height:280px;background:#b45cff;bottom:-70px;right:-70px;
+animation:f2 18s ease-in-out infinite}
+@keyframes f1{50%{transform:translate(60px,40px) scale(1.15)}}
+@keyframes f2{50%{transform:translate(-50px,-40px) scale(1.2)}}
+main{width:100%;max-width:560px;position:relative;z-index:1}
+.avatar{width:76px;height:76px;border-radius:50%;overflow:hidden;
+background:linear-gradient(135deg,#7c9cff,#c58bff);
+display:flex;align-items:center;justify-content:center;font-size:30px;
+font-weight:600;color:#fff;margin-bottom:22px;
+box-shadow:0 0 0 5px rgba(124,156,255,.12)}
+.avatar img{width:100%;height:100%;object-fit:cover}
+h1{font-size:30px;margin:0 0 12px;letter-spacing:1px}
+.desc{color:#8b8f99;font-size:15px;line-height:1.7;margin:0 0 34px}
+a.card{display:flex;align-items:center;justify-content:space-between;
+padding:16px 20px;margin-bottom:12px;border-radius:14px;
+background:rgba(23,26,33,.75);border:1px solid #21252e;color:#e8e8ea;
+text-decoration:none;font-size:15px;backdrop-filter:blur(8px);
+opacity:0;animation:up .7s forwards;transition:background .25s,border-color .25s,transform .25s}
+a.card:nth-of-type(1){animation-delay:.15s}
+a.card:nth-of-type(2){animation-delay:.3s}
+a.card:nth-of-type(3){animation-delay:.45s}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+a.card:hover{background:rgba(30,34,48,.95);border-color:#3a4152;
+transform:translateY(-3px)}
+a.card span{color:#6f747f;font-size:13px}
+footer{margin-top:40px;color:#4c515c;font-size:12px;opacity:0;animation:up .7s .6s forwards}
 </style>
 </head>
 <body>
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<main>
+<div class="avatar">落</div>
 <h1>落妍汐悦</h1>
-<p>先占个地方，慢慢长</p>
+<p class="desc">这里放一句你自己的话——你是谁，在做什么，喜欢什么。两三行就够。</p>
+<a class="card" href="https://github.com/LuoYanXiyue">GitHub<span>代码</span></a>
+<a class="card" href="#">博客<span>随便写写</span></a>
+<a class="card" href="mailto:你的邮箱">联系<span>发邮件</span></a>
+<footer>© 2026 落妍汐悦</footer>
+</main>
 </body>
 </html>
