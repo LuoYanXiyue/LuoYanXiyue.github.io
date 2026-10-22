@@ -1,0 +1,31 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "文章",
+      "sort_order": 1
+    },
+    {
+      "id": 2,
+      "name": "实用工具",
+      "sort_order": 2
+    },
+    {
+      "id": 3,
+      "name": "资源分享",
+      "sort_order": 3
+    },
+    {
+      "id": 4,
+      "name": "教程指南",
+      "sort_order": 4
+    },
+    {
+      "id": 5,
+      "name": "其他",
+      "sort_order": 5
+    }
+  ],
+  "contents": [],
+  "generated_at": "2026-10-22"
+}
