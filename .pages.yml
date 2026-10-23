@@ -1,0 +1,72 @@
+settings:
+  content:
+    merge: true
+
+content:
+  - name: yueyan
+    label: 悦言内容
+    type: file
+    path: data.json
+    format: json
+    fields:
+      - name: categories
+        label: 分类（固定 5 个，只读）
+        type: object
+        list:
+          collapsible: true
+          summary: "{fields.name}"
+        fields:
+          - name: id
+            label: 分类 ID
+            type: number
+            readonly: true
+          - name: name
+            label: 分类名称
+            type: string
+            readonly: true
+          - name: sort_order
+            label: 排序
+            type: number
+            readonly: true
+
+      - name: contents
+        label: 文章列表
+        type: object
+        list:
+          collapsible: true
+          summary: "{fields.title}（ID {fields.id}）"
+        fields:
+          - name: id
+            label: 文章 ID（数字，唯一，手动填写）
+            type: number
+            required: true
+            options:
+              min: 1
+          - name: title
+            label: 标题
+            type: string
+            required: true
+          - name: summary
+            label: 摘要
+            type: text
+          - name: content
+            label: 正文（纯文本，不要用富文本）
+            type: text
+          - name: category
+            label: 分类
+            type: select
+            options:
+              values: ["文章", "实用工具", "资源分享", "教程指南", "其他"]
+          - name: created_at
+            label: 发布日期（YYYY-MM-DD）
+            type: string
+          - name: updated_at
+            label: 更新日期（YYYY-MM-DD）
+            type: string
+          - name: is_pinned
+            label: 置顶
+            type: boolean
+
+      - name: generated_at
+        label: 生成日期
+        type: string
